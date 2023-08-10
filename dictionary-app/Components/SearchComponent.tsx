@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  FlatList,
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import styles from "./Search.style";
 import * as api from "../api";
 
@@ -15,22 +8,25 @@ const SearchComponent = ({
   setSearchTerm,
   setResults,
   results,
+  setIsLoading,
 }) => {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setIsLoading(true);
-    api.getDefinition(searchTerm).then((result) => {
+    try {
+      const result = await api.getDefinition(searchTerm);
+      console.log(results);
+
       if (results.length < 1) {
         setResults([result]);
       } else {
-        let pureResults = [...results, result];
-        setResults(pureResults);
+        setResults([result, ...results]);
       }
-    });
-    console.log(results);
-    setSearchTerm("");
-    setIsLoading(false);
+      setIsLoading(false);
+      setSearchTerm("");
+    } catch (error) {
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

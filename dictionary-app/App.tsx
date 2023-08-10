@@ -10,16 +10,25 @@ import {
 } from "react-native";
 import { useState } from "react";
 import SearchComponent from "./Components/SearchComponent";
-import useFetch from "./api";
 import ResultsComponent from "./Components/Results";
 
 const PlaceholderImage = require("./assets/Background.png");
 
 export default function App() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [definition, setDefinition] = useState("");
-  const [results, setResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [definition, setDefinition] = useState<{
+    word: string;
+    definition: string;
+    examples: string;
+  }>({ word: "", definition: "", examples: "" });
+  const [results, setResults] = useState<
+    {
+      word: string;
+      definition: string;
+      examples: string;
+    }[]
+  >([]);
 
   return (
     <View style={styles.container}>
@@ -32,10 +41,17 @@ export default function App() {
           setSearchTerm={setSearchTerm}
           setResults={setResults}
           results={results}
+          setIsLoading={setIsLoading}
+          setDefinition={setDefinition}
         />
       </View>
+
       <View>
-        <ResultsComponent />
+        {isLoading ? (
+          <Text>Loading...</Text>
+        ) : (
+          <ResultsComponent results={results} />
+        )}
       </View>
 
       <StatusBar style="auto" />
