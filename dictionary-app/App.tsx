@@ -7,10 +7,14 @@ import {
   TouchableOpacity,
   SafeAreaView,
   TextInput,
+  ScrollView,
+  ImageBackground,
+  Dimensions,
 } from "react-native";
 import { useState } from "react";
 import SearchComponent from "./Components/SearchComponent";
 import ResultsComponent from "./Components/Results";
+import AnswerComponent from "./Components/Answer";
 
 const PlaceholderImage = require("./assets/Background.png");
 
@@ -32,9 +36,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={PlaceholderImage} style={styles.image} />
-      </View>
+      <ImageBackground
+        source={PlaceholderImage}
+        style={styles.backgroundImage}
+      />
+
       <View>
         <SearchComponent
           searchTerm={searchTerm}
@@ -45,16 +51,23 @@ export default function App() {
           setDefinition={setDefinition}
         />
       </View>
+      <ScrollView>
+        <View>
+          {definition.word !== "" ? (
+            <AnswerComponent definition={definition} />
+          ) : null}
+        </View>
 
-      <View>
-        {isLoading ? (
-          <Text>Loading...</Text>
-        ) : (
-          <ResultsComponent results={results} />
-        )}
-      </View>
+        <View>
+          {isLoading ? (
+            <Text>Loading...</Text>
+          ) : results.length > 0 ? (
+            <ResultsComponent results={results} />
+          ) : null}
+        </View>
 
-      <StatusBar style="auto" />
+        <StatusBar style="auto" />
+      </ScrollView>
     </View>
   );
 }
@@ -68,11 +81,17 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
+    justifyContent: "center",
     paddingTop: 0,
   },
-  image: {
-    width: 400,
-    height: 800,
-    borderRadius: 18,
+  backgroundImage: {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: -1,
   },
 });

@@ -9,18 +9,28 @@ const SearchComponent = ({
   setResults,
   results,
   setIsLoading,
+  setDefinition,
 }) => {
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
       const result = await api.getDefinition(searchTerm);
-      console.log(results);
-
-      if (results.length < 1) {
+      console.log(result);
+      const newResults = [result, ...results];
+      if (results.length < 1 && result !== undefined) {
         setResults([result]);
+        setDefinition(result);
+      } else if (result === undefined) {
+        setDefinition({
+          word: searchTerm,
+          definition: "That word doesn't exist in our Dictionary.",
+          examples: "",
+        });
       } else {
-        setResults([result, ...results]);
+        setResults(newResults);
+        setDefinition(result);
       }
+
       setIsLoading(false);
       setSearchTerm("");
     } catch (error) {
@@ -30,7 +40,7 @@ const SearchComponent = ({
   };
 
   return (
-    <View>
+    <View style={styles.componentContainer}>
       <View style={styles.container}>
         <Text style={styles.welcomeMessage}>Find the Definition Here!</Text>
       </View>

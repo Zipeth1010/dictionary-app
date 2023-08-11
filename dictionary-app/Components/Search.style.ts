@@ -6,14 +6,24 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
   },
+  componentContainer: {
+    backgroundColor: COLORS.white,
+    padding: 8,
+    width: 380,
+    borderBottomEndRadius: 30,
+    borderTopLeftRadius: 30,
+    marginTop: 30,
+    marginBottom: 10,
+  },
   userName: {
-    fontFamily: FONT.regular,
     fontSize: SIZES.large,
     color: COLORS.secondary,
   },
   welcomeMessage: {
-    fontFamily: FONT.bold,
     fontSize: SIZES.xLarge,
+    fontWeight: "bold",
+    alignItems: "center",
+    alignSelf: "center",
     color: COLORS.tertiary,
     marginTop: 2,
   },
@@ -30,6 +40,7 @@ const styles = StyleSheet.create({
     marginRight: SIZES.small,
     justifyContent: "center",
     alignItems: "center",
+    borderColor: "#000000",
     borderRadius: SIZES.medium,
     height: "100%",
   },
@@ -56,17 +67,6 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: SIZES.medium,
   },
-  tab: (activeJobType, item) => ({
-    paddingVertical: SIZES.small / 2,
-    paddingHorizontal: SIZES.small,
-    borderRadius: SIZES.medium,
-    borderWidth: 1,
-    borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
-  }),
-  tabText: (activeJobType, item) => ({
-    fontFamily: FONT.medium,
-    color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
-  }),
 });
 
 export default styles;
