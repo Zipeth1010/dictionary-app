@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     marginTop: 30,
     marginBottom: 10,
+    borderWidth: 1,
   },
   userName: {
     fontSize: SIZES.large,
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
     borderColor: "#000000",
     borderRadius: SIZES.medium,
     height: "100%",
+    borderWidth: 1,
   },
   searchInput: {
     fontFamily: FONT.regular,

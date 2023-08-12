@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     borderBottomEndRadius: 30,
     borderBottomLeftRadius: 30,
     marginBottom: 10,
+    borderWidth: 1,
   },
   answerHeader: {
     fontSize: SIZES.xLarge,

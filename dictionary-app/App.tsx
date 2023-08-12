@@ -15,6 +15,8 @@ import { useState } from "react";
 import SearchComponent from "./Components/SearchComponent";
 import ResultsComponent from "./Components/Results";
 import AnswerComponent from "./Components/Answer";
+import LoadingComponent from "./Components/Loading";
+import * as Speech from "expo-speech";
 
 const PlaceholderImage = require("./assets/Background.png");
 
@@ -34,6 +36,10 @@ export default function App() {
     }[]
   >([]);
 
+  const speak = () => {
+    Speech.speak("Hi there!");
+  };
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -51,16 +57,16 @@ export default function App() {
           setDefinition={setDefinition}
         />
       </View>
+
+      <View>
+        {definition.word !== "" ? (
+          <AnswerComponent definition={definition} />
+        ) : null}
+      </View>
       <ScrollView>
         <View>
-          {definition.word !== "" ? (
-            <AnswerComponent definition={definition} />
-          ) : null}
-        </View>
-
-        <View>
           {isLoading ? (
-            <Text>Loading...</Text>
+            <LoadingComponent />
           ) : results.length > 0 ? (
             <ResultsComponent results={results} />
           ) : null}

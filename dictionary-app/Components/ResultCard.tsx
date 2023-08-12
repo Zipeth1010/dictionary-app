@@ -20,10 +20,9 @@ const SingleResultCard = (definition: {
     }
   }
 
-  const handleVoice = () => {
-    const thingToSay = definition.word;
-    Speech.speak(thingToSay);
-  };
+  // const handleVoice = (word: string) => {
+  //   Speech.speak(word);
+  // };
 
   return (
     <TouchableOpacity onPress={setClick} style={styles.resultButton}>
@@ -36,9 +35,13 @@ const SingleResultCard = (definition: {
           {definition.examples === undefined ? null : (
             <Text>Example in use: {definition.examples}</Text>
           )}
-          <TouchableHighlight onPress={handleVoice}>
+          {/* <TouchableHighlight
+            onPress={() => {
+              handleVoice(definition.word);
+            }}
+          >
             <Text style={styles.voiceDemo}>Voice Demo</Text>
-          </TouchableHighlight>
+          </TouchableHighlight> */}
         </Text>
       ) : null}
     </TouchableOpacity>

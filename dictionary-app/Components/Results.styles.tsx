@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 15,
     marginBottom: 5,
+    borderWidth: 1,
   },
   resultsHeader: {
     fontSize: SIZES.large,
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignContent: "center",
     alignItems: "center",
+    borderWidth: 1,
     borderColor: COLORS.black,
     width: "75%",
   },
@@ -43,6 +45,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 5,
     borderRadius: 5,
+    margin: 10,
   },
 });
 
