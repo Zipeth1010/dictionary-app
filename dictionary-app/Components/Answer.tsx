@@ -2,7 +2,6 @@ import { View, Text } from "react-native";
 import styles from "./Answer.styles";
 
 const AnswerComponent = ({ definition }) => {
-  console.log(definition.definition);
   return (
     <View style={styles.container}>
       <Text style={styles.answerHeader}>Answer:</Text>

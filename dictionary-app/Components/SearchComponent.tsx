@@ -15,7 +15,6 @@ const SearchComponent = ({
     setIsLoading(true);
     try {
       const result = await api.getDefinition(searchTerm);
-      console.log(result);
       const newResults = [result, ...results];
       if (results.length < 1 && result !== undefined) {
         setResults([result]);
