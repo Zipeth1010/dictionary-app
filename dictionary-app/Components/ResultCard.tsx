@@ -1,7 +1,6 @@
 import { TouchableOpacity, Text, TouchableHighlight } from "react-native";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Results.styles";
-import { useEffect } from "react";
 import * as Speech from "expo-speech";
 
 const SingleResultCard = (definition: {
@@ -20,9 +19,9 @@ const SingleResultCard = (definition: {
     }
   }
 
-  // const handleVoice = (word: string) => {
-  //   Speech.speak(word);
-  // };
+  // function handleVoice() {
+  //   Speech.speak(definition.word);
+  // }
 
   return (
     <TouchableOpacity onPress={setClick} style={styles.resultButton}>
@@ -35,11 +34,7 @@ const SingleResultCard = (definition: {
           {definition.examples === undefined ? null : (
             <Text>Example in use: {definition.examples}</Text>
           )}
-          {/* <TouchableHighlight
-            onPress={() => {
-              handleVoice(definition.word);
-            }}
-          >
+          {/* <TouchableHighlight onPress={handleVoice}>
             <Text style={styles.voiceDemo}>Voice Demo</Text>
           </TouchableHighlight> */}
         </Text>

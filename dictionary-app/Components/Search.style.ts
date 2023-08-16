@@ -9,16 +9,13 @@ const styles = StyleSheet.create({
   componentContainer: {
     backgroundColor: COLORS.white,
     padding: 8,
-    width: 380,
+    width: "100%",
     borderBottomEndRadius: 30,
     borderTopLeftRadius: 30,
-    marginTop: 30,
+    marginTop: "10%",
     marginBottom: 10,
     borderWidth: 1,
-  },
-  userName: {
-    fontSize: SIZES.large,
-    color: COLORS.secondary,
+    alignItems: "center",
   },
   welcomeMessage: {
     fontSize: SIZES.xLarge,
@@ -34,6 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: SIZES.large,
     height: 50,
+    width: "100%",
   },
   searchWrapper: {
     flex: 1,

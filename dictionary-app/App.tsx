@@ -36,10 +36,6 @@ export default function App() {
     }[]
   >([]);
 
-  const speak = () => {
-    Speech.speak("Hi there!");
-  };
-
   return (
     <View style={styles.container}>
       <ImageBackground

@@ -4,7 +4,7 @@ import { COLORS, FONT, SIZES } from "../constants/theme";
 
 const styles = StyleSheet.create({
   container: {
-    width: 380,
+    width: "90%",
     alignItems: "center",
     fontSize: SIZES.xLarge,
     backgroundColor: COLORS.white,
