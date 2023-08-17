@@ -47,6 +47,17 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     margin: 10,
   },
+  clearImage: {
+    width: 30,
+    height: 30,
+  },
+  imageContainer: {
+    width: 30,
+    height: 30,
+    backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderRadius: 15,
+  },
 });
 
 export default styles;

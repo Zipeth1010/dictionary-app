@@ -56,7 +56,10 @@ export default function App() {
 
       <View>
         {definition.word !== "" ? (
-          <AnswerComponent definition={definition} />
+          <AnswerComponent
+            setDefinition={setDefinition}
+            definition={definition}
+          />
         ) : null}
       </View>
       <ScrollView>
@@ -64,7 +67,7 @@ export default function App() {
           {isLoading ? (
             <LoadingComponent />
           ) : results.length > 0 ? (
-            <ResultsComponent results={results} />
+            <ResultsComponent setResults={setResults} results={results} />
           ) : null}
         </View>
 

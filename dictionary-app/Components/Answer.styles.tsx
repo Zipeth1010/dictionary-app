@@ -26,6 +26,17 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center",
   },
+  answerContainer: {
+    width: 30,
+    height: 30,
+    backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderRadius: 15,
+  },
+  image: {
+    width: 30,
+    height: 30,
+  },
 });
 
 export default styles;

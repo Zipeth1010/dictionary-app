@@ -1,7 +1,11 @@
-import { View, Text } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./Answer.styles";
 
-const AnswerComponent = ({ definition }) => {
+const AnswerComponent = ({ setDefinition, definition }) => {
+  const handleClear = () => {
+    setDefinition({ word: "", definition: "", examples: "" });
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.answerHeader}>Answer:</Text>
@@ -16,6 +20,12 @@ const AnswerComponent = ({ definition }) => {
           </Text>
         ) : null}
       </Text>
+      <TouchableOpacity style={styles.answerContainer} onPress={handleClear}>
+        <Image
+          source={require("../assets/icons/clear.png")}
+          style={styles.image}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
