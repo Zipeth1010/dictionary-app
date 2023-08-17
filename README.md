@@ -7,7 +7,8 @@ Scrollview is added so the user can scroll down through his past results to see 
 Following this are some screenshots of the app in action! <br>
 
 ## How to Run Locally
-
+Open up your terminal and direct it to the location where you want to save the app.<br>
+Next, run the command git clone 
 
 ![Screenshot 2023-08-16 at 21 31 27 (2)](https://github.com/Zipeth1010/dictionary-app/assets/120264927/feb43f02-95e3-4fa8-9338-869a41f280de)
 <br>
