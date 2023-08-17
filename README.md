@@ -8,7 +8,11 @@ Following this are some screenshots of the app in action! <br>
 
 ## How to Run Locally
 Open up your terminal and direct it to the location where you want to save the app.<br>
-Next, run the command git clone 
+Next, run the command ***git clone https://github.com/Zipeth1010/dictionary-app.git***. <br>
+After the repository is cloned, cd into the App, and run ***npm install --all*** to install all the local dependencies. <br>
+Ensure that you have installed the latest version of Xcode (If you are working on MacOS). <br>
+After all of this is done, go back to your directory or IDE where the App is focused and run the command ***npm run start i***<br>
+This will boot up Xcode in the IOS environment and will display the app on your default IOS device selected.<br>
 
 ![Screenshot 2023-08-16 at 21 31 27 (2)](https://github.com/Zipeth1010/dictionary-app/assets/120264927/feb43f02-95e3-4fa8-9338-869a41f280de)
 <br>
